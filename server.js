@@ -8,8 +8,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(routes);
 
-sequelize.sync().then(() => {
+sequelize.sync({ force: false }).then(() => {
     app.listen(PORT, () => {
-        console.log(`App listening on port ${PORT}!`);
+        console.log(`App listening on port https://localhost:${PORT}!`);
     });
 });
